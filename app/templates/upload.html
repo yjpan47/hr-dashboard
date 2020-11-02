@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Scripts -->
+
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+{% endwith %}
+
+<section id="upload" style="margin-bottom: 4rem">
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <header class="align-center">
+                <h1 style="text-align: center; margin-bottom: 4rem; color: #25a2c3">Upload Employees</h1>
+            </header>
+            <form method="post" action="/upload" enctype="multipart/form-data">
+                <div class="row uniform">
+                    <div class="12u$" style="text-align: center">
+                          <input type="file" name="file">
+                    </div>
+                    <div class="12u$" style="text-align: center">
+                        <ul class="actions">
+                            <li><input type="submit" value="Submit" /></li>
+                            <li><input type="reset" value="Reset" class="alt" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</section>
+
+{% endblock %}

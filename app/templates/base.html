@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Pettable</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<nav class="left">
+					<a href="#menu"><span>Menu</span></a>
+				</nav>
+				<a href="/index" class="logo">Employees</a>
+			</header>
+
+		<!-- Menu -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/upload">Upload</a></li>
+					<li><a href="/employees">Employees</a></li>
+				</ul>
+				<ul class="actions vertical">
+					<li><a href="#" class="button fit">Login</a></li>
+				</ul>
+			</nav>
+
+        {% block content %}{% endblock %}
+
+		<!-- Scripts -->
+			<script type=text/javascript src="{{ url_for('static', filename='js/templated/jquery.min.js') }}"></script>
+			<script type=text/javascript src="{{ url_for('static', filename='js/templated/jquery.scrolly.min.js') }}"></script>
+			<script type=text/javascript src="{{ url_for('static', filename='js/templated/skel.min.js') }}"></script>
+			<script type=text/javascript src="{{ url_for('static', filename='js/templated/util.js') }}"></script>
+			<script type=text/javascript src="{{ url_for('static', filename='js/templated/main.js') }}"></script>
+			<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+			<script src="https://unpkg.com/dayjs/plugin/weekday"></script>
+			<script type=module src="{{ url_for('static', filename='js/templated/calendar.js') }}"></script>
+	</body>
+</html>
